@@ -9,11 +9,8 @@
 ?>
 	</head>
 	<body>
-		<h2>Bom dia!</h2>
-		
 		<?php
-			echo anchor(base_url("administracao/logout"), " Logout ").anchor(base_url("administracao/gerenciar/control_professor"), "Área dos Professores")
-			.anchor(base_url("administracao/gerenciar/call_control_turmas"), "Área das Turmas");
+			echo anchor(base_url("administracao/logout"), " Logout ").anchor(base_url(), "Visualizar Relatórios");
 
 				/*heading("Bandas cadastradas", 3);
 				

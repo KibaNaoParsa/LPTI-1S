@@ -12,9 +12,14 @@
 			$this->load->view('administracao/tela_principal');
 		}
 		
+		public function control_professor() {
+			$this->load->helper('form');
+			$this->load->view('administracao/control_professor');	
+		}
+		
 		public function call_adicionar_professor() {
 			$this->load->helper('form');
-			$this->load->view('administracao/cadastrar_professor');	
+			$this->load->view('administracao/area_dos_professores/cadastrar_professor');	
 		}
 		
 		public function adicionar(){
@@ -27,6 +32,52 @@
 					redirect(base_url('administracao/gerenciar'));
 			} else {
 				echo "Inclusão impossibilitada";
+			}
+		}
+		
+		public function call_control_turmas() {
+			$data['turma'] = $this->db->get('Turma')->result();
+			
+			$this->load->helper('form');
+			$this->load->view('administracao/control_turmas', $data);	
+		}
+		
+		public function call_editar_professor() {
+			$data['usuario'] = $this->db->get('Usuario')->result();
+		
+			$this->load->helper('form');
+			$this->load->view('administracao/area_dos_professores/listar_professor', $data);	
+		}
+		
+		
+		public function editar_professor($Codigo) {
+			$this->db->where('Codigo', $Codigo);
+			$data['usuario'] = $this->db->get('Usuario')->result();
+			$this->load->helper('form');
+			$this->load->view('administracao/area_dos_professores/editar_professor', $data);
+		}
+
+		public function salvar_alteracao(){
+			$data['Nome'] = $this->input->post('txt_nome');
+			$data['Login'] = $this->input->post('txt_login');
+			$data['Senha'] = $this->input->post('txt_senha');
+			$data['Tipo'] = $this->input->post('txt_atividade');
+			
+			$confirm = true;
+			
+			$active = (int) $this->input->post('txt_atividade');
+			
+			if (($active != 0) || ($active != 1)) 
+				$confirm = false;
+			
+			if (!$confirm) {
+			
+			$this->db->where('Codigo', $this->input->post('Codigo'));
+			
+			if($this->db->update('Usuario', $data))
+				redirect(base_url('administracao/gerenciar'));
+			}else{
+				echo "Alteração impossibilitada";
 			}
 		}
 		

@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
     public function index() {
         //$data['banda'] = $this->db->get('banda')->result();
-        $this->load->view('tela_inicial',$data);
+        $this->load->view('tela_inicial');
     }
   
 }

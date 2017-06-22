@@ -31,7 +31,11 @@
 			}else{
 				$array=array("logado"=>true);
 				$this->session->set_userdata($array);
-				redirect("administracao/gerenciar");
+				if ($usuario == 'coordenacao') {
+					redirect("administracao/gerenciar");
+				} else {
+					redirect("area_professores/gerenciar");
+				}
 			}
 
 
