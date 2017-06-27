@@ -16,10 +16,10 @@
 		<?php
 			echo anchor(base_url("administracao/gerenciar"), " Home ").anchor(base_url("administracao/gerenciar/control_professor"), " Área dos Professores ")
 			.anchor(base_url("administracao/gerenciar/call_control_turmas"), " Área das Turmas ").anchor(base_url("administracao/logout"), " Logout ").
-			heading("Área dos professores: ", 3);
+			heading("Selecionar ação: ", 3);
 			
-			echo anchor(base_url("administracao/gerenciar/call_adicionar_professor"), "Cadastrar Professores")."         ".
-			anchor(base_url("administracao/gerenciar/call_editar_professor"), "Editar Professores");
+			echo anchor(base_url("administracao/gerenciar/call_adicionar_aluno"), " Adicionar Aluno ")."         ".
+			anchor(base_url("administracao/gerenciar/call_listar_turma"), " Listar Alunos ");
 
 		?>
 	</body>

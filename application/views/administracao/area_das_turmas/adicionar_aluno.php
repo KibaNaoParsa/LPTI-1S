@@ -16,11 +16,18 @@
 		<?php
 			echo anchor(base_url("administracao/gerenciar"), " Home ").anchor(base_url("administracao/gerenciar/control_professor"), " Área dos Professores ")
 			.anchor(base_url("administracao/gerenciar/call_control_turmas"), " Área das Turmas ").anchor(base_url("administracao/logout"), " Logout ").
-			heading("Área dos professores: ", 3);
+			heading("Cadastrar aluno: ", 3);
 			
-			echo anchor(base_url("administracao/gerenciar/call_adicionar_professor"), "Cadastrar Professores")."         ".
-			anchor(base_url("administracao/gerenciar/call_editar_professor"), "Editar Professores");
+			$atributos = array('name'=>'formulario_cadastro_aluno', 'id'=>'formulario_cadastro_aluno');
+			echo form_open(base_url('administracao/gerenciar/adicionar_aluno'), $atributos).
+				form_label("Turma: ", "text_turma"). br().
+				form_input('txt_nome', $turma[0]->Descricao).br().
+				form_label("Nome: ", "txt_nome").br().
+				form_input('txt_nome').br().
+				form_label("Login: ", "text_login").br().
+				form_input('txt_login').br().br().
 
+				form_submit("btn_enviar", "Cadastrar").form_close()
 		?>
 	</body>
 </html>

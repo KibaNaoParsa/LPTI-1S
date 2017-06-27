@@ -13,6 +13,13 @@ a{
 	background-color: #DDD;
 	border-radius: 6px;
 }
+
+#caixa-nanica {
+	margin-left: 750px;
+	margin-top: 390px;
+	font-weight: bold;
+}
+
 h1, h2, h3, h4, h5, h6{
 	text-align: center;
 	border-bottom: solid 1px #BBB;

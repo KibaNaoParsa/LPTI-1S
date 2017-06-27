@@ -12,13 +12,17 @@
 		<h2>Bom dia!</h2>
 		
 		<?php
-			echo anchor(base_url("administracao/gerenciar"), "Home").anchor(base_url("administracao/logout"), " Logout ")
-			.anchor(base_url("administracao/gerenciar/call_adicionar_professor"), "Área dos Professores").br().br().br().br().heading("Turmas: ", 3);
+			echo anchor(base_url("administracao/gerenciar"), " Home ").anchor(base_url("administracao/gerenciar/control_professor"), " Área dos Professores ")
+			.anchor(base_url("administracao/gerenciar/call_control_turmas"), " Área das Turmas ").anchor(base_url("administracao/logout"), " Logout ")
+			.br().br().br().br().heading("Área das Turmas: ", 3);
 				
-				foreach($turma as $t){
-					echo anchor(base_url(), $t->Descricao).br();
-				}
-	
+				
+			/*echo anchor(base_url("administracao/gerenciar/call_adicionar_aluno"), " Adicionar Alunos " )."           "
+			.anchor(base_url("administracao/gerenciar/call_listar_alunos"), " Listar Alunos ");
+			*/	
+			foreach($turma as $t){
+				echo anchor(base_url("administracao/gerenciar/call_selecao"), $t->Descricao).br();
+			}
 		?>
 	</body>
 </html>

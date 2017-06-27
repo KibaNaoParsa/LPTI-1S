@@ -14,8 +14,8 @@
 		
 		
 		<?php
-			echo anchor(base_url("administracao/gerenciar"), "Home").anchor(base_url("administracao/logout"), " Logout ").
-			anchor(base_url("administracao/gerenciar/call_control_turmas"), "Área das Turmas").
+			echo anchor(base_url("administracao/gerenciar"), " Home ").anchor(base_url("administracao/gerenciar/control_professor"), " Área dos Professores ")
+			.anchor(base_url("administracao/gerenciar/call_control_turmas"), " Área das Turmas ").anchor(base_url("administracao/logout"), " Logout ").
 			heading("Cadastrar professor: ", 3);
 			
 			$atributos = array('name'=>'formulario_cadastro_professor', 'id'=>'formulario_cadastro_professor');

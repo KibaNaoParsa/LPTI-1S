@@ -2,16 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Gerenciador de Bandas</title>
+		<title>Controle de Avaliações Diagnósticas</title>
 		<?php
 	echo link_tag('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 	echo link_tag('assets/css/estilo.css');
 ?>
 	</head>
 	<body>
-		<?php
-			echo anchor(base_url("administracao/logout"), " Logout ").anchor(base_url(), "Visualizar Relatórios");
+		<h2>Bom dia!</h2>
 
+		
+		<?php
+			echo anchor(base_url("administracao/gerenciar"), " Home ").anchor(base_url("administracao/gerenciar"), " Visualizar Relatórios ")
+			.anchor(base_url("administracao/logout"), " Logout ");
 				/*heading("Bandas cadastradas", 3);
 				
 				foreach($banda as $b){
@@ -20,6 +23,7 @@
 					date("d/m/Y", strtotime($b->data_fundacao)).br()."Nome: ".$b->nome.br()."Quantidade de integrantes: ".$b->qtd_integrantes.br().br();
 				}
 				*/ 
-		?>
+		?>		
+		
 	</body>
 </html>

@@ -35,11 +35,35 @@
 			}
 		}
 		
+		public function adicionar_aluno(){
+			$data['codigoturma'] = $this->input->post($turma[0]->CodigoTurma);
+			$data['nome'] = $this->input->post('txt_nome');
+			$data['matricula'] = $this->input->post('txt_matricula');
+			
+		
+			if($this->db->insert('Usuario', $data)){
+					redirect(base_url('administracao/gerenciar'));
+			} else {
+				echo "Inclusão impossibilitada";
+			}
+		}
+		
 		public function call_control_turmas() {
 			$data['turma'] = $this->db->get('Turma')->result();
 			
 			$this->load->helper('form');
 			$this->load->view('administracao/control_turmas', $data);	
+		}
+		
+		public function call_selecao() {
+			$this->load->helper('form');
+			$this->load->view('administracao/area_das_turmas/selecao');
+		}
+		
+		public function call_adicionar_aluno() {
+			//$data['turma'] = $this->db->get('Turma')->result();
+			$this->load->helper('form');
+			$this->load->view('administracao/area_das_turmas/adicionar_aluno');
 		}
 		
 		public function call_editar_professor() {

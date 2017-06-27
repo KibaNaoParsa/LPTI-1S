@@ -12,10 +12,8 @@
 		}
 		
 		public function efetuar_login(){
-
-		
-		
-		$this->load->library('session');
+			
+			$this->load->library('session');
 			$usuario = $this->input->post('txt_usuario');
 			$senha = $this->input->post('txt_senha');
 			$connect = mysql_connect('localhost', 'root', 'root');
@@ -29,6 +27,7 @@
 				echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='login.html';</script>";
 				
 			}else{
+			
 				$array=array("logado"=>true);
 				$this->session->set_userdata($array);
 				if ($usuario == 'coordenacao') {
