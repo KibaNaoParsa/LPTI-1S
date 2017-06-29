@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-		<title>Gerenciador de Bandas</title>
+		<title>Controle de Avaliação Diagnóstica</title>
 		<meta charset="utf-8">
 		<?php
 			echo link_tag('https://fonts.googleapis.com/css?family=Roboto+Condensed');

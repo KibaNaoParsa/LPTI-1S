@@ -21,20 +21,22 @@
 
 			$verifica = mysql_query("SELECT * from Usuario WHERE Login = '$usuario' AND Senha = '$senha'") or die("erro");
 			
+			
+			
 			if (mysql_num_rows($verifica)<=0){
 				$this->session->sess_destroy();
 				redirect('administracao/login');
 				echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='login.html';</script>";
 				
 			}else{
-			
+
 				$array=array("logado"=>true);
-				$this->session->set_userdata($array);
-				if ($usuario == 'coordenacao') {
-					redirect("administracao/gerenciar");
-				} else {
-					redirect("area_professores/gerenciar");
-				}
+					$this->session->set_userdata($array);
+					if ($usuario == 'coordenacao') {
+						redirect("administracao/gerenciar");
+					} else {
+						redirect("area_professores/gerenciar");
+					}				
 			}
 
 
