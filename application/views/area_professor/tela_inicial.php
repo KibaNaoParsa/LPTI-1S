@@ -13,7 +13,7 @@
 
 		
 		<?php
-			echo anchor(base_url("administracao/gerenciar"), " Home ").anchor(base_url("administracao/gerenciar"), " Visualizar Relatórios ")
+			echo anchor(base_url("area_professores/gerenciar"), " Home ").anchor(base_url("area_professores/gerenciar"), " Visualizar Relatórios ")
 			.anchor(base_url("administracao/logout"), " Logout ");
 				/*heading("Bandas cadastradas", 3);
 				
